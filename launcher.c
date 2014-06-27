@@ -68,7 +68,4 @@ int APIENTRY WinMain(HINSTANCE a, HINSTANCE b, LPSTR c, int d){
 		""
 	};
 	SHFileOperation(&str2);
-	//memset(cmd, 0, 1024);
-	//sprintf(cmd, "rd /s /q %s", tempfile); // GAH!
-	//system(cmd);
 }
