@@ -35,12 +35,12 @@ int APIENTRY WinMain(HINSTANCE a, HINSTANCE b, LPSTR c, int d){
 	char tmpdir[1024];// = (char *)getenv("TEMP");
 	GetTempPath(sizeof(tmpdir), tmpdir);
 	
-	sprintf(tempfile, "%stvg14-%d\0", tmpdir, rand());
+	sprintf(tempfile, "%stvg14-%d", tmpdir, rand());
+	tempfile[strlen(tempfile)+1] = '\0';
 	char buf[1024];
 	CreateDirectory(tempfile, NULL);
 	sprintf(buf, "x chrome.7z -o\"%s\\chrome\"", tempfile);
 	run_exe_h("7zG.exe", buf);
-	memset(buf, 0, 1024);
 	SHFILEOPSTRUCT str = {
 		NULL,
 		FO_COPY,
